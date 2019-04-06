@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PermitionViewController" customModule="spotify_sample" customModuleProvider="target">
+            <connections>
+                <outlet property="btnPermition" destination="Fje-FE-Ymr" id="7LA-sr-t6u"/>
+                <outlet property="view" destination="iN0-l3-epB" id="vp3-6G-08a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fje-FE-Ymr">
+                    <rect key="frame" x="16" y="423" width="382" height="50"/>
+                    <color key="backgroundColor" red="0.098039215686274508" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="REn-Wt-W0z"/>
+                    </constraints>
+                    <state key="normal" title="Permition">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPermitionAction:" destination="-1" eventType="touchUpInside" id="zzX-UN-erI"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spotify_Logo_RGB_White" translatesAutoresizingMaskIntoConstraints="NO" id="SVh-45-c0j">
+                    <rect key="frame" x="68" y="122" width="278" height="223"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.11372549019607843" green="0.72549019607843135" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Fje-FE-Ymr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Ul-Pq-gnm"/>
+                <constraint firstItem="Fje-FE-Ymr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="LNH-mh-0q9"/>
+                <constraint firstItem="Fje-FE-Ymr" firstAttribute="top" secondItem="SVh-45-c0j" secondAttribute="bottom" constant="78" id="O9Q-z0-Ahs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SVh-45-c0j" secondAttribute="trailing" constant="68" id="QVt-CV-uPq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fje-FE-Ymr" secondAttribute="trailing" constant="16" id="TMg-oJ-Vix"/>
+                <constraint firstItem="SVh-45-c0j" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="78" id="Ugn-zR-2o3"/>
+                <constraint firstItem="SVh-45-c0j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="68" id="sC7-YJ-7bR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Spotify_Logo_RGB_White" width="2362" height="708"/>
+    </resources>
+</document>

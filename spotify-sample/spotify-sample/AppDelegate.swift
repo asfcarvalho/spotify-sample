@@ -13,16 +13,21 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var root: PermitionViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        root = PermitionWireFrame.createViewController() as? PermitionViewController
+        
+        window?.rootViewController = root
+        window?.makeKeyAndVisible()
+        
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        print(url.absoluteString)
+//        print(url.absoluteString)
         
         if url.absoluteString.contains("access_token=") {
             
@@ -32,17 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let range = (url.absoluteString as NSString).range(of: "access_token=")
             let start = url.absoluteString.index(url.absoluteString.startIndex, offsetBy: range.location + range.length)
             let text = url.absoluteString[start..<url.absoluteString.endIndex]
-//            print(url)
-//            print(text)
-//            print(text.split(separator: "&").first)
             userDefault.set(text.split(separator: "&").first, forKey: Commons.codeSuccess)
-            
-            SpotifyUserWork().getUserId()
-            
-//            SpotifyPlaylistWork().spotifyPlaylistFetch(userId: <#T##String#>)
+            print("access_token = \(text)")
+            root?.presenter?.showPlaylist()
             
         }else {
-            print("error")
+            root?.presenter?.onError(error: "")
         }
         
         
