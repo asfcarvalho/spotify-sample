@@ -33,11 +33,12 @@ class PlaylistWireframe: PlaylistWireframeProtocol {
         
     }
     
-    func showPlayer() {
-        // to do
+    func showPlayer(from view: UIViewController?, uri: String?) {
+        let play = PlayerWireFrame.createViewController(uri: uri)
+        view?.present(play, animated: true, completion: nil)
     }
     
     func showAlert(from view: UIViewController?, message: String) {
-        Alert.showAlert(from: view, message: message)
+        Alert.showAlert(from: view, message: message, completion: nil)
     }
 }

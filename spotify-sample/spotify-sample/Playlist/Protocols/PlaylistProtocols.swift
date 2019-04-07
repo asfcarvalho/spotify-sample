@@ -25,6 +25,7 @@ protocol PlaylistPresenterInputProtocol {
     func showAlert(message: String)
     func searchArtist(text: String)
     func searchPlaylist(artistId: String)
+    func showPlayer(uri: String)
 }
 
 protocol SearchPlaylistWorkInputProtocol {
@@ -56,7 +57,7 @@ protocol SearchPopularityWorkOutputProtocol: class {
 
 protocol PlaylistWireframeProtocol {
     static func createViewController() -> UIViewController
-    func showPlayer()
+    func showPlayer(from view: UIViewController?, uri: String?)
     func showAlert(from view: UIViewController?, message: String)
 }
 

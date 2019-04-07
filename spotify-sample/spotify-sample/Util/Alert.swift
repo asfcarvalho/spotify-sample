@@ -9,9 +9,9 @@
 import Foundation
 
 class Alert {
-    static func showAlert(from view: UIViewController?, message: String) {
+    static func showAlert(from view: UIViewController?, message: String, completion: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: "Attemption", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: completion))
         view?.present(alert, animated: true, completion: nil)
     }
 }

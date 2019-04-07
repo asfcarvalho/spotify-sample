@@ -10,12 +10,13 @@
 		1913B6A72259872000E89A7E /* PlayPauseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1913B6A62259872000E89A7E /* PlayPauseWorker.swift */; };
 		1913B6AD22599F2700E89A7E /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1913B6AB22599F2700E89A7E /* PlaylistTableViewCell.swift */; };
 		1913B6AE22599F2700E89A7E /* PlaylistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1913B6AC22599F2700E89A7E /* PlaylistTableViewCell.xib */; };
+		1913B6B6225A38F900E89A7E /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1913B6B5225A38F900E89A7E /* SpotifyiOS.framework */; };
+		193720D1225A8C85008B724A /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193720D0225A8C85008B724A /* Devices.swift */; };
 		19763D0A225911E6001571D9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D08225911E6001571D9 /* PlayerViewController.swift */; };
 		19763D0B225911E6001571D9 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19763D09225911E6001571D9 /* PlayerViewController.xib */; };
 		19763D0E22591973001571D9 /* PlayerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D0D22591973001571D9 /* PlayerWorker.swift */; };
 		19763D1122591A1A001571D9 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D1022591A1A001571D9 /* Play.swift */; };
 		19763D1322591A2E001571D9 /* Offiset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D1222591A2E001571D9 /* Offiset.swift */; };
-		19763D15225920FE001571D9 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19763D14225920FD001571D9 /* SpotifyAudioPlayback.framework */; };
 		19763D1D225927A1001571D9 /* SearchPlaylistWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D1C225927A1001571D9 /* SearchPlaylistWork.swift */; };
 		19763D2022592C6C001571D9 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D1F22592C6C001571D9 /* Search.swift */; };
 		19763D2222592C82001571D9 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D2122592C82001571D9 /* Artists.swift */; };
@@ -33,7 +34,7 @@
 		19763D3C22595929001571D9 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D3B22595929001571D9 /* Actions.swift */; };
 		19763D3E22595945001571D9 /* Disallows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D3D22595945001571D9 /* Disallows.swift */; };
 		19763D402259595D001571D9 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D3F2259595D001571D9 /* Context.swift */; };
-		19763D4222595977001571D9 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D4122595977001571D9 /* Devices.swift */; };
+		19763D4222595977001571D9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D4122595977001571D9 /* Device.swift */; };
 		19763D44225959C1001571D9 /* PlayingWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D43225959C1001571D9 /* PlayingWork.swift */; };
 		19763D4722595BDE001571D9 /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D4622595BDE001571D9 /* PlayerProtocol.swift */; };
 		19763D4A22595EEF001571D9 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D4922595EEF001571D9 /* PlayerPresenter.swift */; };
@@ -91,12 +92,13 @@
 		1913B6A62259872000E89A7E /* PlayPauseWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseWorker.swift; sourceTree = "<group>"; };
 		1913B6AB22599F2700E89A7E /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		1913B6AC22599F2700E89A7E /* PlaylistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistTableViewCell.xib; sourceTree = "<group>"; };
+		1913B6B5225A38F900E89A7E /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		193720D0225A8C85008B724A /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		19763D08225911E6001571D9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		19763D09225911E6001571D9 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		19763D0D22591973001571D9 /* PlayerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerWorker.swift; sourceTree = "<group>"; };
 		19763D1022591A1A001571D9 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
 		19763D1222591A2E001571D9 /* Offiset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offiset.swift; sourceTree = "<group>"; };
-		19763D14225920FD001571D9 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		19763D1B225923AE001571D9 /* spotify-sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "spotify-sample-Bridging-Header.h"; sourceTree = "<group>"; };
 		19763D1C225927A1001571D9 /* SearchPlaylistWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaylistWork.swift; sourceTree = "<group>"; };
 		19763D1F22592C6C001571D9 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -115,7 +117,7 @@
 		19763D3B22595929001571D9 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		19763D3D22595945001571D9 /* Disallows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disallows.swift; sourceTree = "<group>"; };
 		19763D3F2259595D001571D9 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		19763D4122595977001571D9 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
+		19763D4122595977001571D9 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		19763D43225959C1001571D9 /* PlayingWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingWork.swift; sourceTree = "<group>"; };
 		19763D4622595BDE001571D9 /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		19763D4922595EEF001571D9 /* PlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
@@ -163,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19763D15225920FE001571D9 /* SpotifyAudioPlayback.framework in Frameworks */,
+				1913B6B6225A38F900E89A7E /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +239,7 @@
 		19763D1622592102001571D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				19763D14225920FD001571D9 /* SpotifyAudioPlayback.framework */,
+				1913B6B5225A38F900E89A7E /* SpotifyiOS.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -273,7 +275,8 @@
 				19763D3B22595929001571D9 /* Actions.swift */,
 				19763D3D22595945001571D9 /* Disallows.swift */,
 				19763D3F2259595D001571D9 /* Context.swift */,
-				19763D4122595977001571D9 /* Devices.swift */,
+				19763D4122595977001571D9 /* Device.swift */,
+				193720D0225A8C85008B724A /* Devices.swift */,
 			);
 			path = Playing;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				19763D1D225927A1001571D9 /* SearchPlaylistWork.swift in Sources */,
 				19763D2F22593014001571D9 /* ExternalIDs.swift in Sources */,
 				19763D3A22595912001571D9 /* Playing.swift in Sources */,
+				193720D1225A8C85008B724A /* Devices.swift in Sources */,
 				19CB329F2258D8EE0067BCA4 /* PermitionWireFrame.swift in Sources */,
 				19CB32A22258EBD60067BCA4 /* PermitionPresenter.swift in Sources */,
 				19763D2222592C82001571D9 /* Artists.swift in Sources */,
@@ -675,7 +679,7 @@
 				19763D4D22595FB6001571D9 /* PlayerWireFrame.swift in Sources */,
 				19763D2722592F91001571D9 /* Seed.swift in Sources */,
 				19CB32AC225902FE0067BCA4 /* Playlist.swift in Sources */,
-				19763D4222595977001571D9 /* Devices.swift in Sources */,
+				19763D4222595977001571D9 /* Device.swift in Sources */,
 				19CB32B52259037E0067BCA4 /* Owner.swift in Sources */,
 				19CB329B2258D7B10067BCA4 /* PlaylistWireframe.swift in Sources */,
 				19763D1122591A1A001571D9 /* Play.swift in Sources */,

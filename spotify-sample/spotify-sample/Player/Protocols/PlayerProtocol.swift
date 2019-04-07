@@ -13,10 +13,11 @@ protocol PlayerPresenterInputProtocol {
     var worker: PlayingWorkerInputProtocol? { get set }
     var wireFrame: PlayerWireFrameProtocol? { get set }
     var workerPlay: PlayPauseWorkerInputProtocol? { get set }
+    var deviceWorker: DeviceWorkerInputProtocol? { get set }
     
-    func viewDidLoad()
-    func showAlert(from view: UIViewController, message: String)
-    func playPause(type: PlayPauseType)
+    func viewDidLoad(uri: String)    
+    func showAlert(from view: UIViewController, message: String, completion: ((UIAlertAction) -> Void)?)
+    func playPause(type: PlayPauseType, positionMS: Int?)
 }
 
 protocol PlayerPresenterOutputProtocol {
@@ -28,12 +29,14 @@ protocol PlayerPresenterOutputProtocol {
     func playPauseSuccess(type: PlayPauseType)
     func showLoading()
     func stopLoading()
+    func noDevice(error: String)
+//    func showDevice(device: )
 }
 
 protocol PlayerWireFrameProtocol {
-    static func createViewController() -> UIViewController
+    static func createViewController(uri: String?) -> UIViewController
     
-    func showAlert(from view: UIViewController, message: String)
+    func showAlert(from view: UIViewController, message: String, completion: ((UIAlertAction) -> Void)?)
 }
 
 protocol PlayingWorkerInputProtocol {
@@ -50,10 +53,22 @@ protocol PlayingWorkerOutputProtocol: class {
 protocol PlayPauseWorkerInputProtocol {
     var presenter: PlayPauseWorkerOutputProtocol? { get set }
     
-    func playPauseFetch(type: PlayPauseType)
+    func playPauseFetch(type: PlayPauseType, uri: String?, deviceId: String?, positionMS: Int?)
 }
 
 protocol PlayPauseWorkerOutputProtocol: class {
     func onError(error: String)
     func onSuccess(type: PlayPauseType)
+}
+
+protocol DeviceWorkerInputProtocol {
+    var presenter: DeviceWorkerOutputProtocol? { get set }
+    
+    func devicesFetch()
+}
+
+protocol DeviceWorkerOutputProtocol {
+    func noDevices()
+    func onError(error: String)
+    func showDevices(device: Device)
 }

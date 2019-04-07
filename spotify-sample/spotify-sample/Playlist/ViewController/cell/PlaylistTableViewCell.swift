@@ -17,16 +17,16 @@ class PlaylistTableViewCell: UITableViewCell {
     @IBOutlet weak var durationLabel: UILabel!
     
     
-    var _image: String?
-    var _albumName: String?
-    var _artistName: String?
-    var _musicName: String?
-    var _duration: Int?
+//    var _image: String?
+//    var _albumName: String?
+//    var _artistName: String?
+//    var _musicName: String?
+//    var _duration: Int?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupCell()
+//        setupCell()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,27 +36,24 @@ class PlaylistTableViewCell: UITableViewCell {
     }
     
     func setupCell(image: String?, albumName: String?, artistName: String?, musicName: String?, duration: Int?) {
-        self._image = image
-        self._albumName = albumName
-        self._artistName = artistName
-        self._musicName = musicName
-        self._duration = duration
-    }
-    
-    func setupCell() {
-        if let value = _image, let url = URL(string: value) {
+        if let value = image, let url = URL(string: value) {
             do {
                 let data = try Data(contentsOf: url)
                 self.algumImage.image = UIImage(data: data) ?? UIImage(named: "Spotify_Icon_RGB_Green")
             }catch {
                 
             }
+        }else {
+            self.algumImage.image = UIImage(named: "Spotify_Icon_RGB_Green")
         }
-        self.albumName.text = _albumName
-        self.artistName.text = _artistName
-        self.musicName.text = _musicName
-        let value = String(format: "%.2f", Double(_duration ?? 0) / 10000)
-        self.durationLabel.text = value
+        self.albumName.text = albumName
+        self.artistName.text = artistName
+        self.musicName.text = musicName
+        if let duration = duration {
+            let value = String(format: "%.2f", Double(duration) / 10000)
+            self.durationLabel.text = value
+        }
     }
+    
     
 }

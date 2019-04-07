@@ -33,6 +33,10 @@ class PlaylistPresenter: PlaylistPresenterInputProtocol {
         view?.showLoading()
         workPopularity?.searchPopularityFetch(artist: artistId)
     }
+    
+    func showPlayer(uri: String) {
+        wireFrame?.showPlayer(from: view as? UIViewController, uri: uri)
+    }
 }
 
 extension  PlaylistPresenter: PlaylistWorkerOutputProtocol {
@@ -60,3 +64,4 @@ extension PlaylistPresenter: SearchPopularityWorkOutputProtocol {
         view?.showSearchPlaylist(playlist: playlist)
     }
 }
+

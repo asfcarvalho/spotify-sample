@@ -9,6 +9,9 @@
 #ifndef spotify_sample_Bridging_Header_h
 #define spotify_sample_Bridging_Header_h
 
-#import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
+//#import <SpotifyAuthentication/SpotifyAuthentication.h>
+//#import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
+//#import <SpotifyMetadata/SpotifyMetadata.h>
+#import <SpotifyiOS/SpotifyiOS.h>
 
 #endif /* spotify_sample_Bridging_Header_h */
