@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1913B6A72259872000E89A7E /* PlayPauseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1913B6A62259872000E89A7E /* PlayPauseWorker.swift */; };
+		1913B6AD22599F2700E89A7E /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1913B6AB22599F2700E89A7E /* PlaylistTableViewCell.swift */; };
+		1913B6AE22599F2700E89A7E /* PlaylistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1913B6AC22599F2700E89A7E /* PlaylistTableViewCell.xib */; };
 		19763D0A225911E6001571D9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D08225911E6001571D9 /* PlayerViewController.swift */; };
 		19763D0B225911E6001571D9 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19763D09225911E6001571D9 /* PlayerViewController.xib */; };
 		19763D0E22591973001571D9 /* PlayerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19763D0D22591973001571D9 /* PlayerWorker.swift */; };
@@ -85,6 +88,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1913B6A62259872000E89A7E /* PlayPauseWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseWorker.swift; sourceTree = "<group>"; };
+		1913B6AB22599F2700E89A7E /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		1913B6AC22599F2700E89A7E /* PlaylistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistTableViewCell.xib; sourceTree = "<group>"; };
 		19763D08225911E6001571D9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		19763D09225911E6001571D9 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		19763D0D22591973001571D9 /* PlayerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerWorker.swift; sourceTree = "<group>"; };
@@ -178,6 +184,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1913B6A822599ED100E89A7E /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				1913B6AB22599F2700E89A7E /* PlaylistTableViewCell.swift */,
+				1913B6AC22599F2700E89A7E /* PlaylistTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		19763D06225911CB001571D9 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +220,7 @@
 				19763D0D22591973001571D9 /* PlayerWorker.swift */,
 				19763D3622594BE0001571D9 /* DevicesWork.swift */,
 				19763D43225959C1001571D9 /* PlayingWork.swift */,
+				1913B6A62259872000E89A7E /* PlayPauseWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -290,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				19763D4F2259610B001571D9 /* Alert.swift */,
+				19CB32A62258F5800067BCA4 /* Loading.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -326,6 +343,7 @@
 		19CB32982258D7090067BCA4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1913B6A822599ED100E89A7E /* cell */,
 				4C51A66F2257A23A0058086E /* PlayListViewController.swift */,
 				4C51A6702257A23A0058086E /* PlayListViewController.xib */,
 			);
@@ -473,7 +491,6 @@
 		4C51A669225796BE0058086E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				19CB32A62258F5800067BCA4 /* Loading.swift */,
 				4C51A66A2257970E0058086E /* Commons.swift */,
 				19763D1B225923AE001571D9 /* spotify-sample-Bridging-Header.h */,
 			);
@@ -614,6 +631,7 @@
 				4C51A63D22578A400058086E /* Assets.xcassets in Resources */,
 				4C51A63822578A3E0058086E /* Main.storyboard in Resources */,
 				19CB32A92258FBC40067BCA4 /* PermitionViewController.xib in Resources */,
+				1913B6AE22599F2700E89A7E /* PlaylistTableViewCell.xib in Resources */,
 				19763D0B225911E6001571D9 /* PlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,6 +685,7 @@
 				19763D2022592C6C001571D9 /* Search.swift in Sources */,
 				4C51A6712257A23A0058086E /* PlayListViewController.swift in Sources */,
 				19763D502259610B001571D9 /* Alert.swift in Sources */,
+				1913B6A72259872000E89A7E /* PlayPauseWorker.swift in Sources */,
 				19763D31225930BF001571D9 /* SearchPopularityWork.swift in Sources */,
 				19763D0E22591973001571D9 /* PlayerWorker.swift in Sources */,
 				4C51A666225795BA0058086E /* PlaylistProtocols.swift in Sources */,
@@ -679,6 +698,7 @@
 				4C51A63522578A3E0058086E /* ViewController.swift in Sources */,
 				4C51A668225795EB0058086E /* PlaylistWork.swift in Sources */,
 				19763D3C22595929001571D9 /* Actions.swift in Sources */,
+				1913B6AD22599F2700E89A7E /* PlaylistTableViewCell.swift in Sources */,
 				19CB32B9225903E70067BCA4 /* DefaultWork.swift in Sources */,
 				19CB32A52258EDF30067BCA4 /* PermitionWorker.swift in Sources */,
 				19763D2922592FA7001571D9 /* Track.swift in Sources */,

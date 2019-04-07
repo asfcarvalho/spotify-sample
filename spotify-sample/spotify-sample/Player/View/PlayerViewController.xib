@@ -18,7 +18,6 @@
                 <outlet property="btnPlay" destination="NFO-2P-vhV" id="UPo-RY-XR1"/>
                 <outlet property="durationLabel" destination="cfN-b1-RCt" id="OgJ-BX-U8t"/>
                 <outlet property="nameLabel" destination="olY-w8-LQl" id="vTw-t4-ODy"/>
-                <outlet property="probressView" destination="hV1-wk-LPn" id="KIK-kK-HhB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,6 +26,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWR-YX-Ifv">
+                    <rect key="frame" x="0.0" y="20" width="375" height="333.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spotify_Icon_RGB_Green" translatesAutoresizingMaskIntoConstraints="NO" id="vct-sk-GRT">
+                            <rect key="frame" x="16" y="16" width="343" height="301.5"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="vct-sk-GRT" firstAttribute="top" secondItem="EWR-YX-Ifv" secondAttribute="top" constant="16" id="Dks-8Y-gfP"/>
+                        <constraint firstAttribute="bottom" secondItem="vct-sk-GRT" secondAttribute="bottom" constant="16" id="Rvr-PR-bgo"/>
+                        <constraint firstAttribute="trailing" secondItem="vct-sk-GRT" secondAttribute="trailing" constant="16" id="YsX-im-93d"/>
+                        <constraint firstItem="vct-sk-GRT" firstAttribute="leading" secondItem="EWR-YX-Ifv" secondAttribute="leading" constant="16" id="q91-UO-pGN"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFO-2P-vhV">
                     <rect key="frame" x="162.5" y="577" width="50" height="50"/>
                     <constraints>
@@ -34,41 +48,31 @@
                         <constraint firstAttribute="width" constant="50" id="k9C-qU-3IH"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" backgroundImage="play"/>
+                    <state key="normal" backgroundImage="pause"/>
                     <connections>
                         <action selector="btnPlayAction:" destination="-1" eventType="touchUpInside" id="sFO-WG-2re"/>
                     </connections>
                 </button>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hV1-wk-LPn">
-                    <rect key="frame" x="16" y="548" width="343" height="4"/>
-                    <color key="tintColor" red="0.098039215690000001" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="4" id="K5K-JV-jnn"/>
-                    </constraints>
-                </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olY-w8-LQl">
-                    <rect key="frame" x="16" y="304" width="343" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olY-w8-LQl">
+                    <rect key="frame" x="16" y="494" width="343" height="17"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Spotify_Icon_RGB_Green" translatesAutoresizingMaskIntoConstraints="NO" id="vct-sk-GRT">
-                    <rect key="frame" x="16" y="20" width="343" height="159"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELV-lm-HJb">
-                    <rect key="frame" x="16" y="222.5" width="343" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELV-lm-HJb">
+                    <rect key="frame" x="16" y="412.5" width="343" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-zf-Onr">
-                    <rect key="frame" x="16" y="263" width="343" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-zf-Onr">
+                    <rect key="frame" x="16" y="453" width="343" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-b1-RCt">
-                    <rect key="frame" x="317" y="523" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfN-b1-RCt">
+                    <rect key="frame" x="16" y="531" width="343" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -90,33 +94,32 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cfN-b1-RCt" secondAttribute="trailing" constant="16" id="0Dt-KR-RKU"/>
                 <constraint firstItem="ELV-lm-HJb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0Qi-Fs-WGR"/>
                 <constraint firstItem="Kdn-zf-Onr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="5ZE-KU-wCR"/>
-                <constraint firstItem="vct-sk-GRT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5ub-lu-PHP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="olY-w8-LQl" secondAttribute="trailing" constant="16" id="9LL-Jx-K3k"/>
-                <constraint firstItem="vct-sk-GRT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="HA3-wm-etk"/>
                 <constraint firstItem="1qr-dF-lrg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="InW-EK-fvt"/>
                 <constraint firstItem="olY-w8-LQl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IqM-nf-qHV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NFO-2P-vhV" secondAttribute="bottom" constant="40" id="MhR-Gs-AWY"/>
-                <constraint firstItem="vct-sk-GRT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="Osv-eX-DGx"/>
-                <constraint firstAttribute="trailing" secondItem="hV1-wk-LPn" secondAttribute="trailing" constant="16" id="QWH-hA-5um"/>
+                <constraint firstItem="EWR-YX-Ifv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qiv-aJ-0wZ"/>
                 <constraint firstItem="olY-w8-LQl" firstAttribute="top" secondItem="Kdn-zf-Onr" secondAttribute="bottom" constant="20" id="RgQ-eW-Vil"/>
-                <constraint firstItem="hV1-wk-LPn" firstAttribute="top" secondItem="cfN-b1-RCt" secondAttribute="bottom" constant="4" id="Ttf-f7-TjR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ELV-lm-HJb" secondAttribute="trailing" constant="16" id="Xl4-5C-Udc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kdn-zf-Onr" secondAttribute="trailing" constant="16" id="YWP-0d-TCJ"/>
-                <constraint firstItem="hV1-wk-LPn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Z4u-gY-HBc"/>
                 <constraint firstItem="1qr-dF-lrg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="aqZ-XA-8F1"/>
-                <constraint firstItem="ELV-lm-HJb" firstAttribute="top" secondItem="vct-sk-GRT" secondAttribute="bottom" constant="50" id="ax2-Kf-nTD"/>
-                <constraint firstItem="NFO-2P-vhV" firstAttribute="top" secondItem="hV1-wk-LPn" secondAttribute="bottom" constant="25" id="ddE-k5-5iN"/>
-                <constraint firstItem="hV1-wk-LPn" firstAttribute="top" secondItem="olY-w8-LQl" secondAttribute="bottom" constant="40" id="etF-8K-EGS"/>
+                <constraint firstItem="ELV-lm-HJb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EWR-YX-Ifv" secondAttribute="bottom" constant="15" id="cBz-bb-DiA"/>
+                <constraint firstItem="NFO-2P-vhV" firstAttribute="top" secondItem="cfN-b1-RCt" secondAttribute="bottom" constant="25" id="iRR-fF-Rkb"/>
                 <constraint firstItem="NFO-2P-vhV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mhO-GX-6UZ"/>
+                <constraint firstItem="EWR-YX-Ifv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="smG-R7-OSo"/>
+                <constraint firstItem="EWR-YX-Ifv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tJM-R6-LpP"/>
+                <constraint firstItem="cfN-b1-RCt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="tna-a7-ahl"/>
+                <constraint firstItem="cfN-b1-RCt" firstAttribute="top" secondItem="olY-w8-LQl" secondAttribute="bottom" constant="20" id="uM6-5N-u7k"/>
+                <constraint firstItem="EWR-YX-Ifv" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="xs7-7X-eDw"/>
                 <constraint firstItem="Kdn-zf-Onr" firstAttribute="top" secondItem="ELV-lm-HJb" secondAttribute="bottom" constant="20" id="yxn-1m-gc9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-1.875" y="52.5"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="51.724137931034484"/>
         </view>
     </objects>
     <resources>
         <image name="Spotify_Icon_RGB_Green" width="709" height="709"/>
         <image name="back" width="28" height="28"/>
-        <image name="play" width="28" height="28"/>
+        <image name="pause" width="28" height="28"/>
     </resources>
 </document>

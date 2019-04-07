@@ -11,9 +11,10 @@ import Foundation
 class PlayerWireFrame: PlayerWireFrameProtocol {
     class func createViewController() -> UIViewController {
         
-        var presenter: PlayerPresenterInputProtocol & PlayingWorkerOutputProtocol = PlayerPresenter()
+        var presenter: PlayerPresenterInputProtocol & PlayingWorkerOutputProtocol & PlayPauseWorkerOutputProtocol = PlayerPresenter()
         let wireFrame: PlayerWireFrameProtocol = PlayerWireFrame()
         var worker: PlayingWorkerInputProtocol = PlayingWork()
+        var workerPlay: PlayPauseWorkerInputProtocol = PlayPauseWorker()
         
         let vc = PlayerViewController()
         vc.presenter = presenter
@@ -21,6 +22,8 @@ class PlayerWireFrame: PlayerWireFrameProtocol {
         worker.presenter = presenter
         presenter.wireFrame = wireFrame
         presenter.view = vc
+        presenter.workerPlay = workerPlay
+        workerPlay.presenter = presenter
         
         return vc
     }

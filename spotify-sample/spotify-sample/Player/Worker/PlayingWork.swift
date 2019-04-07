@@ -18,7 +18,7 @@ class PlayingWork: PlayingWorkerInputProtocol {
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                self.presenter?.onError(erro: error?.localizedDescription ?? "")
+                self.presenter?.onError(error: error?.localizedDescription ?? "")
                 return
             }
             
@@ -28,7 +28,7 @@ class PlayingWork: PlayingWorkerInputProtocol {
                 let playing = try jsonDecoder.decode(Playing.self, from: data)
                 self.presenter?.showPlaying(playing: playing)
             }catch let jsonError {
-                self.presenter?.onError(erro: jsonError.localizedDescription)
+                self.presenter?.onError(error: jsonError.localizedDescription)
             }
             
         }).resume()

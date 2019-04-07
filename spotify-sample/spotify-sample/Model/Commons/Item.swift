@@ -39,7 +39,8 @@ struct Item: Codable {
         case tracks, type, uri
         case followers
         case genres
-        case popularity, durationMS
+        case popularity
+        case durationMS = "duration_ms"
     }
 }
 

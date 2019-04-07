@@ -10,7 +10,7 @@ import Foundation
 
 class PlayerPresenter: PlayerPresenterInputProtocol {
     
-    
+    var workerPlay: PlayPauseWorkerInputProtocol?
     var view: PlayerPresenterOutputProtocol?
     var wireFrame: PlayerWireFrameProtocol?
     var worker: PlayingWorkerInputProtocol?
@@ -23,18 +23,29 @@ class PlayerPresenter: PlayerPresenterInputProtocol {
     func showAlert(from view: UIViewController, message: String) {
         wireFrame?.showAlert(from: view, message: message)
     }
+    
+    func playPause(type: PlayPauseType) {
+        workerPlay?.playPauseFetch(type: type)
+    }
 }
 
 extension PlayerPresenter: PlayingWorkerOutputProtocol {
-    func onError(erro: String) {
+    func onError(error erro: String) {
         view?.stopLoading()
         view?.onError(error: erro)
     }
     
     func showPlaying(playing: Playing) {
-        view?.stopLoading()
+        
         view?.showPlaying(playing: playing)
+        view?.stopLoading()
     }
     
     
+}
+
+extension PlayerPresenter: PlayPauseWorkerOutputProtocol {
+    func onSuccess(type: PlayPauseType) {
+        view?.playPauseSuccess(type: type)
+    }
 }

@@ -12,9 +12,11 @@ protocol PlayerPresenterInputProtocol {
     var view: PlayerPresenterOutputProtocol? { get set }
     var worker: PlayingWorkerInputProtocol? { get set }
     var wireFrame: PlayerWireFrameProtocol? { get set }
+    var workerPlay: PlayPauseWorkerInputProtocol? { get set }
     
     func viewDidLoad()
     func showAlert(from view: UIViewController, message: String)
+    func playPause(type: PlayPauseType)
 }
 
 protocol PlayerPresenterOutputProtocol {
@@ -23,6 +25,7 @@ protocol PlayerPresenterOutputProtocol {
     
     func onError(error: String)
     func showPlaying(playing: Playing)
+    func playPauseSuccess(type: PlayPauseType)
     func showLoading()
     func stopLoading()
 }
@@ -40,6 +43,17 @@ protocol PlayingWorkerInputProtocol {
 }
 
 protocol PlayingWorkerOutputProtocol: class {
-    func onError(erro: String)
+    func onError(error: String)
     func showPlaying(playing: Playing)
+}
+
+protocol PlayPauseWorkerInputProtocol {
+    var presenter: PlayPauseWorkerOutputProtocol? { get set }
+    
+    func playPauseFetch(type: PlayPauseType)
+}
+
+protocol PlayPauseWorkerOutputProtocol: class {
+    func onError(error: String)
+    func onSuccess(type: PlayPauseType)
 }

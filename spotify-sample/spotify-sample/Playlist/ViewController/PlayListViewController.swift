@@ -31,7 +31,7 @@ class PlayListViewController: UIViewController {
         
         presenter?.viewDidLoad()
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CELL)
+        tableView.register(PlaylistTableViewCell.self, forCellReuseIdentifier: CELL)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -54,6 +54,14 @@ extension PlayListViewController: UISearchBarDelegate {
 }
 
 extension PlayListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
@@ -82,16 +90,35 @@ extension PlayListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CELL) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CELL) as? PlaylistTableViewCell else {
             return UITableViewCell()
         }
+        
+        var image: String?
+        var albumName: String?
+        var artistName: String?
+        var musicName: String?
+        var duration: Int?
+        
         if type == ListType.artist {
-            cell.textLabel?.text = search?.artists.items[indexPath.row].name
+            let artist = search?.artists.items[indexPath.row]
+            image = artist?.images?.last?.url
         }else if type == ListType.search {
-            cell.textLabel?.text = searchPlaylist?.tracks?[indexPath.row].name
+            let search = searchPlaylist?.tracks?[indexPath.row]
+            image = search?.album?.images?.last?.url
+            albumName = search?.album?.name
+            artistName = search?.artists?.first?.name
+            musicName = search?.name
+            duration = search?.durationMS
         }else {
-            cell.textLabel?.text = playlist?.items[indexPath.row].name
+            let playlist = self.playlist?.items[indexPath.row]
+            image = playlist?.images?.last?.url
+            albumName = playlist?.album?.name
+            musicName = playlist?.name
+            duration = playlist?.durationMS
         }
+//        cell.awakeFromNib()
+        cell.setupCell(image: image, albumName: albumName, artistName: artistName, musicName: musicName, duration: duration)
         
         return cell
     }

@@ -15,7 +15,7 @@ class Loading {
     static func showLoading(_ view: UIView) {
         
         viewLoading = UIView(frame: view.bounds)
-        viewLoading?.backgroundColor = UIColor.gray.withAlphaComponent(0.9)
+        viewLoading?.backgroundColor = UIColor.black.withAlphaComponent(0.9)
         
         let indicator = UIActivityIndicatorView(style: .whiteLarge)
         indicator.center = view.center
