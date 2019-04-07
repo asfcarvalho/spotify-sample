@@ -24,9 +24,6 @@ class PlayerPresenter: PlayerPresenterInputProtocol {
         self.uri = uri
         
         deviceWorker?.devicesFetch()
-        
-//        workerPlay?.playPauseFetch(type: PlayPauseType.play, uri: uri)
-//        worker?.playingFetch()
     }
     
     func showAlert(from view: UIViewController, message: String, completion: ((UIAlertAction) -> Void)?) {

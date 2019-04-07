@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 
 class PlayerViewController: UIViewController, UIApplicationDelegate {
+    
+    var myAudioPlayer: AVAudioPlayer?
 
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var artistName: UILabel!
@@ -30,32 +32,23 @@ class PlayerViewController: UIViewController, UIApplicationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        do{
-//            if let value = URL(string: "https://p.scdn.co/mp3-preview/4ba3be95cdc4b3ef1af95950f56f4feae04b25db?cid=ddc15eac36134225b71ccf3f18ff3966") {
-//                self.player = try AVAudioPlayer(contentsOf: value)
-//                self.player?.prepareToPlay()
-//                self.player?.play()
-//            }
-//        }catch {
-//            print(error)
-//        }
-        
         presenter?.viewDidLoad(uri: uri ?? "")
         
-//        PlayerWork().playFetch(value: "spotify:album:5ht7ItJgpBH7W6vJ5BqpPr")
-
-//        initializaPlayer()
+        btnPlay.layer.cornerRadius = btnPlay.bounds.width / 2
+        btnPlay.backgroundColor = UIColor.white
         
+        setGradientBackground(colorTop: UIColor.brown.withAlphaComponent(0.1), colorBottom: UIColor.black)
+    }
+    
+    func setGradientBackground(colorTop: UIColor, colorBottom: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorBottom.cgColor, UIColor.brown.withAlphaComponent(0.3).cgColor, colorTop.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = self.view.bounds
         
-//        DevicesWork().devicesFetch()
-        
-        
-//        let userDefault = UserDefaults()
-//        let accessToken = userDefault.string(forKey: Commons.codeSuccess)
-//        
-//        self.appRemote.connectionParameters.accessToken = accessToken ?? ""
-//        self.appRemote.connect()
-        
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     @IBAction func btnPlayAction(_ sender: Any) {
@@ -68,13 +61,13 @@ class PlayerViewController: UIViewController, UIApplicationDelegate {
     }
     
     
-    
 }
 
 
 
 extension PlayerViewController: PlayerPresenterOutputProtocol {
     func noDevice(error: String) {
+        self.view.isHidden = true
         self.presenter?.showAlert(from: self, message: error, completion: { (alert) in
             self.dismiss(animated: true, completion: nil)
         })

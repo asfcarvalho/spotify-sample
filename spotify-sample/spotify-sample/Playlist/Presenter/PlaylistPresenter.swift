@@ -46,22 +46,25 @@ extension  PlaylistPresenter: PlaylistWorkerOutputProtocol {
     }
     
     func showPlaylist(playlist: Playlist) {
-        view?.stopLoading()
+        
         view?.showPlaylist(playlist: playlist)
+        view?.stopLoading()
     }
 }
 
 extension  PlaylistPresenter: SearchPlaylistWorkOutputProtocol {
     func showSearchPlaylist(search: Search) {
-        view?.stopLoading()
+        
         view?.showSearchArtist(search: search)
+        view?.stopLoading()
     }
 }
 
 extension PlaylistPresenter: SearchPopularityWorkOutputProtocol {
     func showSearchPopularity(playlist: SearchPlaylist) {
-        view?.stopLoading()
+        
         view?.showSearchPlaylist(playlist: playlist)
+        view?.stopLoading()
     }
 }
 

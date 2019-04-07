@@ -14,19 +14,12 @@ class PlaylistTableViewCell: UITableViewCell {
     @IBOutlet weak var albumName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var musicName: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
-    
-    
-//    var _image: String?
-//    var _albumName: String?
-//    var _artistName: String?
-//    var _musicName: String?
-//    var _duration: Int?
 
+    @IBOutlet weak var viewMain: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        setupCell()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,7 +28,7 @@ class PlaylistTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(image: String?, albumName: String?, artistName: String?, musicName: String?, duration: Int?) {
+    func setupCell(image: String?, albumName: String?, artistName: String?, musicName: String?) {
         if let value = image, let url = URL(string: value) {
             do {
                 let data = try Data(contentsOf: url)
@@ -49,10 +42,12 @@ class PlaylistTableViewCell: UITableViewCell {
         self.albumName.text = albumName
         self.artistName.text = artistName
         self.musicName.text = musicName
-        if let duration = duration {
-            let value = String(format: "%.2f", Double(duration) / 10000)
-            self.durationLabel.text = value
-        }
+        
+        viewMain.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
+        viewMain.layer.shadowOffset = CGSize(width: 2, height: 2)
+        viewMain.layer.shadowRadius = 6
+        viewMain.layer.shadowOpacity = 0.5
+        viewMain.layer.cornerRadius = 6
     }
     
     

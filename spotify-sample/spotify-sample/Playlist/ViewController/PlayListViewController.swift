@@ -25,7 +25,12 @@ class PlayListViewController: UIViewController {
     fileprivate var searchPlaylist: SearchPlaylist?
     fileprivate let CELL = "cell"
     fileprivate var type: ListType = ListType.track
-
+    @IBOutlet weak var viewBackConstraint: NSLayoutConstraint!
+    @IBOutlet weak var viewBack: UIView!
+    @IBOutlet weak var btnBack: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +42,24 @@ class PlayListViewController: UIViewController {
         
         searchBar.delegate = self
         
-        
+        configButton()
+    }
+    
+    fileprivate func configButton() {
+        btnBack.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
+        btnBack.layer.shadowOffset = CGSize(width: 2, height: 2)
+        btnBack.layer.shadowRadius = 6
+        btnBack.layer.shadowOpacity = 0.5
+        btnBack.layer.cornerRadius = 4
+    }
+    
+    @IBAction func btnBackMyPlaylistAction(_ sender: Any) {
+        presenter?.viewDidLoad()
+    }
+    
+    func enableBackToMyPlaylist(status: Bool) {
+        self.viewBack.isHidden = status
+        self.viewBackConstraint.constant = status ? 0 : 50
     }
 }
 
@@ -97,16 +119,15 @@ extension PlayListViewController: UITableViewDelegate, UITableViewDataSource {
         var albumName: String?
         var artistName: String?
         var musicName: String?
-        var duration: Int?
         
         if type == ListType.artist {
             let artist = search?.artists.items[indexPath.row]
             image = artist?.images?.last?.url
-            albumName = artist?.name
+            artistName = artist?.name
         }else if type == ListType.search {
             let search = searchPlaylist?.tracks?[indexPath.row]
             image = search?.album?.images?.last?.url
-            albumName = search?.artists?.first?.name
+            albumName = search?.album?.name
             artistName = search?.artists?.first?.name
             musicName = search?.name
         }else {
@@ -116,7 +137,7 @@ extension PlayListViewController: UITableViewDelegate, UITableViewDataSource {
             musicName = playlist?.name
         }
         
-        cell.setupCell(image: image, albumName: albumName, artistName: artistName, musicName: musicName, duration: duration)
+        cell.setupCell(image: image, albumName: albumName, artistName: artistName, musicName: musicName)
         //cell.awakeFromNib()
         return cell
     }
@@ -130,6 +151,7 @@ extension PlayListViewController: PlaylistViewControllerProtocol {
         self.search = search
         
         DispatchQueue.main.async {
+            self.enableBackToMyPlaylist(status: false)
             self.tableView.reloadData()
         }
     }
@@ -144,6 +166,7 @@ extension PlayListViewController: PlaylistViewControllerProtocol {
         self.playlist = playlist
         
         DispatchQueue.main.async {
+            self.enableBackToMyPlaylist(status: true)
             self.tableView.reloadData()
         }
         
@@ -154,6 +177,7 @@ extension PlayListViewController: PlaylistViewControllerProtocol {
         self.searchPlaylist = playlist
         
         DispatchQueue.main.async {
+            self.enableBackToMyPlaylist(status: false)
             self.tableView.reloadData()
         }
     }

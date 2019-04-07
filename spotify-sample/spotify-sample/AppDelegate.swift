@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             userDefault.set(text.split(separator: "&").first, forKey: Commons.codeSuccess)
             print("access_token = \(text)")
 
-//            root?.appRemote.connectionParameters.accessToken = text.split(separator: "&").first?.description
-//            root?.appRemote.connect()
 
             root?.presenter?.showPlaylist()
 
