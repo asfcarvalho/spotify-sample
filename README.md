@@ -26,4 +26,4 @@ When you open the app you will be sent to Spotify account, there you  have to ac
 
 ### Built With
 
-* URLRequest - the request framework
+* URLRequest - the API request framework
