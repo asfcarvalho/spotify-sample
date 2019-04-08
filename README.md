@@ -1,21 +1,22 @@
 # spotify-sample
 
-This is a simple app for list the 10 less played song from a specific artist.
+This app sample lists the top 10 less played song from an specific artist that users search for.
 
-* It's a VIPER pattern inspiration, I used just viewcontroller, presenter, wireframe and model.
+* It's a VIPER pattern inspiration, I used viewcontroller, presenter, wireframe and model.
 
 ### Getting Started
 
-When you open the app you will be sent to Spotify account, there you  have to accept some terms and when you accept the terms, you come back to the app and it lists your current playlist, there is one search place in this screen, where you can search for your artist and this research return the top 10 less played song from this artist.
+When you open the app, you'll be headed to your Spotify account. To proceed with the use of the app you must accept the terms and return to the app, it will show your playlist and the search bar. Search and find out the top 10 least played songs from a chosen artist.
 
 
 
+* The first screen  will show you a button if you don't accept the  terms. The app requires users to accept the terms to proceed app use.
 
-* There is just one button on the first screen when you didn't accept the Spotify terms because you should accept the terms to use the app.
+* The second screen shows the search bar and the table list, the first request returns the current user’s playlist.
 
-* There is in the second screen one search bar and one table list, the first request returns a current playlist of the user.
-
-* In the search bar you can search the artist and the request returns the top 10 less played sonf from the artist.
+* Use the search bar to research for an artist and the request returns the top 10 of least played songs from the artist you chose.
+- The  button "Back to My Playlist", will send you to the fist screen if you click it.
+- I used the URI: "https://api.spotify.com/v1/artists/\(artist)/top-tracks?country=BR" to show the top 10 least played. in the results, i reorder from the least played to most played.
 
 * There is an image of the album,  the name of the song, the name of the album, the name of the artist, the duration time and one button play/pause.
 
