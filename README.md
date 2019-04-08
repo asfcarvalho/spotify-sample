@@ -2,7 +2,7 @@
 
 This is a simple app for list the 10 less played song from a specific artist.
 
-## Getting Started
+### Getting Started
 
 When you open the app you will be sent to Spotify account, there you  have to accept some terms and when you accept the terms, you come back to the app and it lists your current playlist, there is one search place in this screen, where you can search for your artist and this research return the top 10 less played song from this artist.
 
@@ -17,11 +17,11 @@ It's a VIPER pattern inspiration, I used just viewcontroller, presenter, wirefra
 
 * There is an image of the album,  the name of the song, the name of the album, the name of the artist, the duration time and one button play/pause.
 
-## Running the tests
+### Running the tests
 
 * Open the Spotify app, this is a requisite to play and pause the song and to see the currently played song.
 
 
-## Built With
+### Built With
 
 * URLRequest - the request framework
