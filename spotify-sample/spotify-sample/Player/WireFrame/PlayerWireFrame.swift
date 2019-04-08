@@ -6,7 +6,7 @@
 //  Copyright © 2019 Anderson Carvalho. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PlayerWireFrame: PlayerWireFrameProtocol {
     class func createViewController(uri: String?) -> UIViewController {

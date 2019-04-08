@@ -12,8 +12,7 @@ class SearchPlaylistWork: SearchPlaylistWorkInputProtocol {
     weak var presenter: SearchPlaylistWorkOutputProtocol?
     
     func searchPlaylistFetch(text: String) {
-        
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=\(text)&type=artist")!)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=\(text.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")&type=artist")!)
         request.allHTTPHeaderFields = DefaultWork.getHeader()
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             

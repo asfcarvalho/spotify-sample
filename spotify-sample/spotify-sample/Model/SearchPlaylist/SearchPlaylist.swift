@@ -9,6 +9,6 @@
 import Foundation
 
 struct SearchPlaylist: Codable {
-    let tracks: [Track]?
+    var tracks: [Track]?
     let seeds: [Seed]?
 }

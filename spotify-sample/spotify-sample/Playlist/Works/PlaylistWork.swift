@@ -13,7 +13,7 @@ class PlaylistWork: PlaylistWorkerInputProtocol {
     
     func spotifyPlaylistFetch() {
         
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/me/playlists")!)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/me/playlists")!)//https://api.spotify.com/v1/me/tracks
         request.allHTTPHeaderFields = DefaultWork.getHeader()
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
 

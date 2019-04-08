@@ -13,7 +13,7 @@ class SearchPopularityWork: SearchPopularityWorkInputProtocol {
     
     func searchPopularityFetch(artist: String) {
         
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/recommendations?limit=10&seed_artists=\(artist)&target_popularity=0")!)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/artists/\(artist)/top-tracks?country=BR")!)
         request.allHTTPHeaderFields = DefaultWork.getHeader()
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             

@@ -102,7 +102,7 @@ extension PlayerViewController: PlayerPresenterOutputProtocol {
     
     func showPlaying(playing: Playing) {
         self.playing = playing
-        if playPause == PlayPauseType.pause {
+        if playing.item != nil {
             DispatchQueue.main.async {
                 self.albumLabel.text = playing.item?.album?.name
                 self.artistName.text = playing.item?.artists?.first?.name

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Anderson Carvalho. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Alert {
     static func showAlert(from view: UIViewController?, message: String, completion: ((UIAlertAction) -> Void)?) {

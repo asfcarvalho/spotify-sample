@@ -6,7 +6,7 @@
 //  Copyright © 2019 Anderson Carvalho. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PlayerPresenter: PlayerPresenterInputProtocol {
     

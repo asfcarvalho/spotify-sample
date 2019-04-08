@@ -62,9 +62,16 @@ extension  PlaylistPresenter: SearchPlaylistWorkOutputProtocol {
 
 extension PlaylistPresenter: SearchPopularityWorkOutputProtocol {
     func showSearchPopularity(playlist: SearchPlaylist) {
-        
-        view?.showSearchPlaylist(playlist: playlist)
+        var playlistResult = playlist
+        let playlistOrder = playlist.tracks?.sorted(by: { (item, item1) -> Bool in
+            return item.popularity ?? 0 < item1.popularity ?? 0
+        })
+        if let array = playlistOrder?.prefix(10) {
+            playlistResult.tracks = Array(array)
+            view?.showSearchPlaylist(playlist: playlistResult)
+        }
         view?.stopLoading()
+            
     }
 }
 

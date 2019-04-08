@@ -59,7 +59,7 @@ class PlayListViewController: UIViewController {
     
     func enableBackToMyPlaylist(status: Bool) {
         self.viewBack.isHidden = status
-        self.viewBackConstraint.constant = status ? 0 : 50
+        self.viewBackConstraint.constant = status ? 0 : 60
     }
 }
 
@@ -133,8 +133,7 @@ extension PlayListViewController: UITableViewDelegate, UITableViewDataSource {
         }else {
             let playlist = self.playlist?.items[indexPath.row]
             image = playlist?.images?.last?.url
-            albumName = playlist?.album?.name
-            musicName = playlist?.name
+            artistName = playlist?.name
         }
         
         cell.setupCell(image: image, albumName: albumName, artistName: artistName, musicName: musicName)
