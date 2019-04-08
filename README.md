@@ -14,9 +14,10 @@ When you open the app, you'll be headed to your Spotify account. To proceed with
 
 * The second screen shows the search bar and the table list, the first request returns the current user’s playlist.
 
-* Use the search bar to research for an artist and the request returns the top 10 of least played songs from the artist you chose.
-* The  button "Back to My Playlist", will send you to the fist screen if you click it.
-* I used the URI: "https://api.spotify.com/v1/artists/\(artist)/top-tracks?country=BR" to show the top 10 least played. in the results, i reorder from the least played to most played.
+* Use the search bar to research for an artist and the request returns the top 10 of least played songs from the artist you chose. 
+
+     *The  button "Back to My Playlist", will send you to the fist screen if you click it.    
+     *I used the URI: "https://api.spotify.com/v1/artists/\(artist)/top-tracks?country=BR" to show the top 10 least played. in the results, i reorder from the least played to most played.
 
 * There is an image of the album,  the name of the song, the name of the album, the name of the artist, the duration time and one button play/pause.
 
